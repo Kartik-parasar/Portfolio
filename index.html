@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kartik Parasar | Software Developer</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- OVERLAY -->
+<div id="intro-overlay">
+  <h1 id="shuffle-name">Kartik Parasar</h1>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">🐾 Kartik</div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Tech Stack</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Connect</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-content">
+    <h1 class="hero-name">Kartik Parasar</h1>
+    <h2>Software Developer</h2>
+    <p>
+      A web developer who loves building clean, modern interfaces — and a game lover who enjoys exploring new worlds and challenges.
+    </p>
+
+    <div class="buttons">
+      <a href="#projects" class="btn primary">View Projects</a>
+      <a href="#contact" class="btn secondary">Contact Me</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+    <p class="about-text">
+      I’m a BCA undergrad and a passionate web developer who loves building clean and efficient websites.  
+      Outside coding and gaming, I enjoy traveling and exploring new places.
+    </p>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section id="skills" class="section dark">
+  <div class="container">
+    <h2 class="section-title">Tech Stack</h2>
+
+    <div class="skills-grid">
+      <div class="skill-card"><div class="skill-icon"><img src="https://i.pinimg.com/1200x/83/70/0c/83700c295a92efb8632cb497ff9cb79e.jpg" alt="HTML logo"></div><h3>HTML</h3></div>
+      <div class="skill-card"><div class="skill-icon"><img src="https://i.pinimg.com/736x/1d/a3/fd/1da3fd017f2d2676be0205c98f586f1e.jpg" alt="CSS logo"></div><h3>CSS</h3></div>
+      <div class="skill-card"><div class="skill-icon"><img src="https://i.pinimg.com/1200x/49/9b/1d/499b1d8f955acd1d3ec30f217eddfa2a.jpg" alt="JS logo"></div><h3>JavaScript</h3></div>
+      <div class="skill-card"><div class="skill-icon"><img src="https://i.pinimg.com/736x/8e/57/65/8e57654d72a95d4c1a74a68828998255.jpg" alt="Python logo"></div><h3>Python</h3></div>
+      <div class="skill-card"><div class="skill-icon"><img src="https://i.pinimg.com/736x/7b/f5/25/7bf52500c1a9032466bf1b714fa965f7.jpg" alt="ML logo"></div><h3>Machine Learning</h3></div>
+      <div class="skill-card"><div class="skill-icon"><img src="https://i.pinimg.com/736x/12/82/5b/12825b7c37949b74323b645028003146.jpg" alt="Git logo"></div><h3>Git</h3></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
+    <div class="project-card coming-soon">
+      <h3>Projects Coming Soon</h3>
+      <p>Exciting projects are on the way! Stay tuned.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section dark">
+  <div class="container">
+    <h2 class="section-title">Connect with Me</h2>
+    <p class="contact-text">Feel free to reach out for collaboration or opportunities.</p>
+
+    <div class="social-links">
+      <a href="https://github.com/Kartik-parasar" target="_blank" class="social-btn">
+        GitHub
+      </a>
+      <a href="https://linkedin.com/in/kartikgoswami" target="_blank" class="social-btn">
+        LinkedIn
+      </a>
+      <a href="mailto:kartik@example.com" class="social-btn">
+        Email
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Kartik Parasar
+</footer>
+
+<script>
+const text = "Kartik Parasar";
+const el = document.getElementById("shuffle-name");
+const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
+let iterations = 0;
+const interval = setInterval(() => {
+  el.innerText = text.split("")
+    .map((letter, i) => i < iterations ? text[i] : chars[Math.floor(Math.random()*chars.length)])
+    .join("");
+
+  if(iterations >= text.length) clearInterval(interval);
+  iterations += 1/3;
+}, 30);
+
+setTimeout(() => {
+  document.getElementById("intro-overlay").style.display = "none";
+  document.body.classList.add("loaded");
+}, 2000);
+</script>
+
+</body>
+</html>
